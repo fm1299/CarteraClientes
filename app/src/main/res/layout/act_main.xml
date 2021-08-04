@@ -14,20 +14,37 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_act_main" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:contentDescription="Add"
-        app:srcCompat="@android:drawable/ic_input_add"/>
+        android:src="@android:drawable/ic_delete"
+        app:backgroundTint="#E41E1E" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/teal_200"
+        app:layout_anchor="@id/fab"
+        app:layout_anchorGravity="top" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@color/purple_500"
         app:popupTheme="@style/Theme.CarteraClientes.PopupOverlay"
         app:title="Clientes" />
 

@@ -34,13 +34,20 @@ public class ActMain extends AppCompatActivity {
         setContentView(R.layout.act_main);
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab2=(FloatingActionButton)findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it=new Intent(ActMain.this,ActNuevoCliente.class);
                 //startActivity(it);
                 startActivityForResult(it,0);
+            }
+        });
+        FloatingActionButton fab=(FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datosOpenHelper.deleteData();
             }
         });
         actualizar();
