@@ -13,6 +13,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -34,8 +36,8 @@ public class ActMain extends AppCompatActivity {
         setContentView(R.layout.act_main);
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab2=(FloatingActionButton)findViewById(R.id.fab2);
-        fab2.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it=new Intent(ActMain.this,ActNuevoCliente.class);
@@ -43,14 +45,14 @@ public class ActMain extends AppCompatActivity {
                 startActivityForResult(it,0);
             }
         });
-        FloatingActionButton fab=(FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                datosOpenHelper.deleteData();
-            }
-        });
         actualizar();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu_act_main,menu);
+        return super.onCreateOptionsMenu(menu);
     }
     private void actualizar()
     {

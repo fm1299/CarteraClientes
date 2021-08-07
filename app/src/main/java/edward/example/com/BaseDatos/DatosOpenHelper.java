@@ -20,11 +20,11 @@ public class DatosOpenHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase,int i,int il){
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS CLIENTE");
+
     }
-    public void deleteData()
+    /*public void deleteData()
     {
         SQLiteDatabase db=this.getWritableDatabase();
         db.execSQL("DELETE FROM CLIENTE");
-    }
+    }*/
 }
