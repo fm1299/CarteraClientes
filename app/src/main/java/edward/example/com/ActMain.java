@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -53,6 +54,19 @@ public class ActMain extends AppCompatActivity {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu_act_main,menu);
         return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id=item.getItemId();
+        if(id==R.id.action_delete)
+        {
+            datosOpenHelper=new DatosOpenHelper(this);
+            conexion=datosOpenHelper.getWritableDatabase();
+            conexion.delete("CLIENTE",null,null);
+            actualizar();
+        }
+        return super.onOptionsItemSelected(item);
     }
     private void actualizar()
     {

@@ -15,9 +15,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/purple_700"
             app:popupTheme="@style/Theme.CarteraClientes.PopupOverlay"
-            app:title="Nuevo Cliente"/>
+            app:title="Nuevo Cliente" />
 
     </com.google.android.material.appbar.AppBarLayout>
     <include layout="@layout/content_act_nuevo_cliente" />
