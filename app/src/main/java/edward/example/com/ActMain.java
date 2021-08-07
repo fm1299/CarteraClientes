@@ -90,6 +90,14 @@ public class ActMain extends AppCompatActivity {
                 }
                 while(resultado.moveToNext());
             }
+            else if (resultado.getCount()==0)
+            {
+                AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+                dlg.setTitle("Aviso");
+                dlg.setMessage("Base de datos vacia");
+                dlg.setNeutralButton("Ok",null);
+                dlg.show();
+            }
             adaptador=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,clientes);
             lstDatos.setAdapter(adaptador);
         }
